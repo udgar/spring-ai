@@ -8,11 +8,11 @@
 		<version>3.5.11</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.spring.ai</groupId>
-	<artifactId>spring-ai</artifactId>
+	<groupId>com.spring</groupId>
+	<artifactId>mcp</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>springai</name>
-	<description>Demo project for Spring Boot AI project</description>
+	<name/>
+	<description/>
 	<url/>
 	<licenses>
 		<license/>
@@ -37,7 +37,7 @@
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.ai</groupId>
-			<artifactId>spring-ai-starter-model-ollama</artifactId>
+			<artifactId>spring-ai-starter-mcp-server-webmvc</artifactId>
 		</dependency>
 
 		<dependency>
