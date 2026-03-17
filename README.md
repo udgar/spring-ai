@@ -71,7 +71,7 @@ AI for spring developers
 
 ### How LLM works:
 1. Prompt given by AI
-2. LLM is envoked
+2. LLM is invoked
 3. Response is provided
 
 ### Do something with the Response:
@@ -135,3 +135,8 @@ They use Tools.
 1. Identify ehat changes where made in the code and revert it (interacts with the git in order to track changes)
 2. We seem to be missing details from stripe record(access SQL Queries, Access Stripe and other associated with the application)
 
+### What to do ?:
+
+1. Working MCP server to connect with LLMs.
+2. Working with the information it hasn't been trained on. We can feed data and train it on them.
+3. 
