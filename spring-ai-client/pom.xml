@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.spring.ai</groupId>
-	<artifactId>spring-ai</artifactId>
+	<artifactId>mcp-client</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>springai</name>
 	<description>Demo project for Spring Boot AI project</description>
