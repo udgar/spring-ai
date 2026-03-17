@@ -139,4 +139,3 @@ They use Tools.
 
 1. Working MCP server to connect with LLMs.
 2. Working with the information it hasn't been trained on. We can feed data and train it on them.
-3. 

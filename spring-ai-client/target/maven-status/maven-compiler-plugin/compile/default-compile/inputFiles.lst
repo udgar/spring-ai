@@ -1,4 +1,3 @@
-/home/udgar/personal projects/spring-ai/src/main/java/com/spring/ai/demo/SpringaiApplication.java
-/home/udgar/personal projects/spring-ai/src/main/java/com/spring/ai/demo/config/GeminiConfig.java
-/home/udgar/personal projects/spring-ai/src/main/java/com/spring/ai/demo/controller/ChatController.java
-/home/udgar/personal projects/spring-ai/src/main/java/com/spring/ai/demo/service/GeminiService.java
+/home/udgar/personal projects/spring-ai/spring-ai-client/src/main/java/com/spring/ai/demo/SpringaiApplication.java
+/home/udgar/personal projects/spring-ai/spring-ai-client/src/main/java/com/spring/ai/demo/controller/ChatController.java
+/home/udgar/personal projects/spring-ai/spring-ai-client/src/main/java/com/spring/ai/demo/service/ChatService.java

@@ -1,4 +1,3 @@
-com/spring/ai/demo/config/GeminiConfig.class
 com/spring/ai/demo/SpringaiApplication.class
-com/spring/ai/demo/service/GeminiService.class
+com/spring/ai/demo/service/ChatService.class
 com/spring/ai/demo/controller/ChatController.class
