@@ -1,6 +1,21 @@
 package com.spring.mcp.model;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import org.springframework.cglib.core.GeneratorStrategy;
+
+import java.time.LocalDateTime;
+
+@Entity
 public class FlightInformation {
+
+
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
     private String flightId;
 
@@ -16,13 +31,22 @@ public class FlightInformation {
 
     private Integer duration;
 
+    private LocalDateTime startDateTime;
+
+    private LocalDateTime endDateTime;
+
+    public FlightInformation() {
+    }
+
     public FlightInformation(String flightId,
                              String airline,
                              String flightNumber,
                              String startPoint,
                              String endPoint,
                              String status,
-                             Integer duration) {
+                             Integer duration,
+                             LocalDateTime startDateTime,
+                             LocalDateTime endDateTime) {
         this.flightId = flightId;
         this.airline = airline;
         this.flightNumber = flightNumber;
@@ -30,6 +54,8 @@ public class FlightInformation {
         this.endPoint = endPoint;
         this.status = status;
         this.duration = duration;
+        this.startDateTime=startDateTime;
+        this.endDateTime=endDateTime;
     }
 
     public String getFlightId() {
@@ -86,5 +112,21 @@ public class FlightInformation {
 
     public void setDuration(Integer duration) {
         this.duration = duration;
+    }
+
+    public LocalDateTime getStartDateTime() {
+        return startDateTime;
+    }
+
+    public void setStartDateTime(LocalDateTime startDateTime) {
+        this.startDateTime = startDateTime;
+    }
+
+    public LocalDateTime getEndDateTime() {
+        return endDateTime;
+    }
+
+    public void setEndDateTime(LocalDateTime endDateTime) {
+        this.endDateTime = endDateTime;
     }
 }
