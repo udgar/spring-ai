@@ -21,7 +21,7 @@ public class FlightInformationTools {
         this.service = service;
     }
 
-    @Tool(name="flight-add-to-list", description = "Add new flight information")
+    @Tool(name="flight-add-to-list-or-update", description = "Add new flight information or update it")
     public String addFlight(
             @ToolParam(description = "The flight id, eg. 3456") @JsonProperty("flightId") String flightId,
             @ToolParam(description = "The airline id, eg. BUD") @JsonProperty("airlineId") String airlineId,
