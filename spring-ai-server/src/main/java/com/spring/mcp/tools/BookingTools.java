@@ -23,7 +23,7 @@ public class BookingTools {
             ,@ToolParam(description = "remarks, eg. allergic to peanut")String remarks){
 
         try {
-            service.saveBooking(flightNumber,passengerName,remarks);
+            service.saveBooking(passengerName,remarks,flightNumber);
             return """
                 Flight has been added sucessfully
                 """;
