@@ -18,7 +18,8 @@ public class Bookings {
 
     private String flightId;
 
-    public Bookings(){}
+    public Bookings() {
+    }
 
     public Bookings(String name, String remarks, String flightId) {
         this.name = name;

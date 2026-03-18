@@ -1,7 +1,6 @@
 package com.spring.mcp.model;
 
 import jakarta.persistence.*;
-import org.springframework.cglib.core.GeneratorStrategy;
 
 import java.time.LocalDateTime;
 
@@ -49,8 +48,8 @@ public class FlightInformation {
         this.endPoint = endPoint;
         this.status = status;
         this.duration = duration;
-        this.startDateTime=startDateTime;
-        this.endDateTime=endDateTime;
+        this.startDateTime = startDateTime;
+        this.endDateTime = endDateTime;
     }
 
     public Long getId() {

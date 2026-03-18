@@ -21,7 +21,7 @@ public class FlightInformationTools {
         this.service = service;
     }
 
-    @Tool(name="flight-add-to-list-or-update", description = "Add new flight information or update it")
+    @Tool(name = "flight-add-to-list-or-update", description = "Add new flight information or update it")
     public String addFlight(
             @ToolParam(description = "The flight id, eg. 3456") @JsonProperty("flightId") String flightId,
             @ToolParam(description = "The airline id, eg. BUD") @JsonProperty("airlineId") String airlineId,
@@ -32,21 +32,20 @@ public class FlightInformationTools {
             @ToolParam(description = "Duration in minutes, eg. 120") @JsonProperty("duration") Integer duration,
             @ToolParam(description = "Start date time, eg. 2026-03-18T14:30:45") @JsonProperty("startDateTime") LocalDateTime startDateTime,
             @ToolParam(description = "End date time, eg. 2026-03-18T14:30:45") @JsonProperty("endDateTime") LocalDateTime endDateTime
-    ){
+    ) {
         try {
-            var flight=new FlightInformation(flightId,airlineId,flightNumber,startPoint,endPoint,status,duration,startDateTime,endDateTime);
+            var flight = new FlightInformation(flightId, airlineId, flightNumber, startPoint, endPoint, status, duration, startDateTime, endDateTime);
             service.saveFlightInfo(flight);
-            return String.format("Flight information with flight id %s added Successfully whose status is %s",flightId,status);
-        }
-        catch (Exception exception){
-           return """
+            return String.format("Flight information with flight id %s added Successfully whose status is %s", flightId, status);
+        } catch (Exception exception) {
+            return """
                     The flight information could not be added, is your information correct?
                     """;
         }
     }
 
-    @Tool(name="latest-flight-list",description = "Get flight information")
-    public List<FlightInformation> getListOfFlights(){
+    @Tool(name = "latest-flight-list", description = "Get flight information")
+    public List<FlightInformation> getListOfFlights() {
         return service.getAllFlightInfo();
     }
 }

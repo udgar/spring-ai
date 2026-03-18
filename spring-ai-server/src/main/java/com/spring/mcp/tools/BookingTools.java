@@ -17,26 +17,25 @@ public class BookingTools {
         this.service = service;
     }
 
-    @Tool(name="book-flight",description = "Book particular flight for certain individual")
+    @Tool(name = "book-flight", description = "Book particular flight for certain individual")
     public String bookFlight(@ToolParam(description = "Flight number, eg. SW123") String flightNumber
             , @ToolParam(description = "passenger name, eg. udgar") String passengerName
-            ,@ToolParam(description = "remarks, eg. allergic to peanut")String remarks){
+            , @ToolParam(description = "remarks, eg. allergic to peanut") String remarks) {
 
         try {
-            service.saveBooking(passengerName,remarks,flightNumber);
+            service.saveBooking(passengerName, remarks, flightNumber);
             return """
-                Flight has been added sucessfully
-                """;
-        }
-        catch (Exception e){
+                    Flight has been added sucessfully
+                    """;
+        } catch (Exception e) {
             return """
                     Flight could not be added, is your information correct?""";
         }
 
     }
 
-    @Tool(name="retieve-booking",description = "Get the bookings")
-    public List<Bookings> getBookings(){
+    @Tool(name = "retieve-booking", description = "Get the bookings")
+    public List<Bookings> getBookings() {
         return service.getAll();
     }
 }

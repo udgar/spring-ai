@@ -15,11 +15,11 @@ public class FlightInformationService {
         this.repository = repository;
     }
 
-    public FlightInformation saveFlightInfo(FlightInformation info){
+    public FlightInformation saveFlightInfo(FlightInformation info) {
         return repository.save(info);
     }
 
-    public List<FlightInformation> getAllFlightInfo(){
+    public List<FlightInformation> getAllFlightInfo() {
         return repository.findAll();
     }
 }
