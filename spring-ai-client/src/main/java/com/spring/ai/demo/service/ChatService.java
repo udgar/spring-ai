@@ -8,6 +8,7 @@ import org.springframework.ai.chat.metadata.Usage;
 import org.springframework.ai.chat.model.ChatResponse;
 import org.springframework.ai.chat.prompt.ChatOptions;
 import org.springframework.stereotype.Service;
+import org.springframework.web.reactive.function.client.WebClientResponseException;
 import reactor.core.publisher.Flux;
 
 
@@ -57,10 +58,9 @@ public class ChatService {
                                 usage.getCompletionTokens(),
                                 usage.getTotalTokens());
                 })
-                .map(chatResponse -> chatResponse.getResult().getOutput().getText())
-                .doOnError(error -> {
-                    LOGGER.error("The error that has been encountered during the request is {}", error.getMessage());
-                });
+                .onErrorComplete()
+                .map(chatResponse -> chatResponse.getResult().getOutput().getText());
+
     }
 
 }
