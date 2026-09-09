@@ -57,7 +57,10 @@ public class ChatService {
                                 usage.getCompletionTokens(),
                                 usage.getTotalTokens());
                 })
-                .map(chatResponse -> chatResponse.getResult().getOutput().getText());
+                .map(chatResponse -> chatResponse.getResult().getOutput().getText())
+                .doOnError(error -> {
+                    LOGGER.error("The error that has been encountered during the request is {}", error.getMessage());
+                });
     }
 
 }
