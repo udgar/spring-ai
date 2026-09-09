@@ -36,4 +36,9 @@ public class ChatController {
         return service.getWorkoutPlan(type != null ? type : "pull");
     }
 
+    @PostMapping(value = "/financial-message")
+    public Flux<String> financialMessage(@RequestBody String requestBody) {
+        return service.messageExplanation(requestBody);
+    }
+
 }
