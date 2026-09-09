@@ -1,7 +1,7 @@
 package com.spring.ai.demo.service;
 
+import com.spring.ai.demo.models.WorkoutChatResponse;
 import org.springframework.ai.chat.client.ChatClient;
-import org.springframework.ai.chat.model.ChatModel;
 import org.springframework.ai.chat.model.ChatResponse;
 import org.springframework.ai.chat.prompt.ChatOptions;
 import org.springframework.stereotype.Service;
@@ -25,8 +25,16 @@ public class ChatService {
         return chatClient.prompt().user(prompt).stream().content();
     }
 
-    public ChatResponse joke(){
+    public ChatResponse joke() {
         return chatClient.prompt().user("Tell me a joke").call().chatResponse();
+    }
+
+    public WorkoutChatResponse getWorkoutPlan(String type) {
+        return chatClient.prompt()
+                .system("Provide only the list of three")
+                .user(String.format("Give me the list of  %s exercises", type))
+                .call()
+                .entity(WorkoutChatResponse.class);
     }
 
 }
