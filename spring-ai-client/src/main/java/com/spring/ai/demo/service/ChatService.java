@@ -18,9 +18,12 @@ public class ChatService {
     private Logger LOGGER = LoggerFactory.getLogger(ChatService.class);
 
     private final ChatClient chatClient;
+    private final SupportDecider decider;
 
-    public ChatService(ChatClient.Builder builder) {
+
+    public ChatService(ChatClient.Builder builder, SupportDecider decider) {
         this.chatClient = builder.defaultOptions(ChatOptions.builder().model("mistral-small-2603").build()).build();
+        this.decider = decider;
     }
 
     public Flux<String> ask() {
@@ -61,6 +64,16 @@ public class ChatService {
                 .onErrorComplete()
                 .map(chatResponse -> chatResponse.getResult().getOutput().getText());
 
+    }
+
+    public Flux<String> supportedMessageType(String message) {
+        var messageType = chatClient.prompt()
+                .system("Give what type of financial message this is in one word, for example mt101, mt103 for mt, and pacs008 for mx")
+                .user(message)
+                .call()
+                .content();
+
+        return chatClient.prompt().tools(decider).user(String.format("Determine whether %s is supported by system", messageType)).stream().content();
     }
 
 }

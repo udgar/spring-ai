@@ -41,4 +41,9 @@ public class ChatController {
         return service.messageExplanation(requestBody);
     }
 
+    @GetMapping(value = "/supported-message")
+    public Flux<String> isSupported(@RequestBody String message) {
+        return service.supportedMessageType(message);
+    }
+
 }
